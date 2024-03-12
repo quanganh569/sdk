@@ -10,7 +10,6 @@ function App() {
   return (
     <div className="App">
       <ToastContainer />
-
       {posthog.has_opted_out_capturing() || // new
       posthog.has_opted_in_capturing() ? null : (
         <CookieBanner />
