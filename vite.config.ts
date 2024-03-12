@@ -11,5 +11,5 @@ export default defineConfig({
       },
     },
   },
-  base: "https://cdn.jsdelivr.net/gh/quanganh569/sdk@tree/main/build",
+  base: "https://cdn.statically.io/gh/quanganh569/sdk/tree/main/build",
 });
