@@ -7,9 +7,16 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Exclude node_modules, dist, and dist-ssr
 node_modules
-*dist
-*dist-ssr
+dist/
+dist-ssr/
+
+# Exclude specific files and directories inside dist
+dist/**
+!dist/.keep  # Add exceptions if necessary
+
+# Exclude .local
 *.local
 
 # Editor directories and files
