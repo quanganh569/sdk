@@ -99,3 +99,4 @@ The result looks like this:
 [GitHub](https://github.com/tony19-sandbox/vite-react-single-js-file)
 
 [Ghost page](https://react-app-in-ghost.ghost.io/p/bcab0f9f-070c-4dbf-bfed-11edf121d38a/)
+# sdk
