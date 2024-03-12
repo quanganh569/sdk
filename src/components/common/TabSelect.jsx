@@ -1,6 +1,6 @@
 // Tab.js
 
-const Tab = ({ nameTab, active, onClick, color, icon, countOfTab }: any) => {
+const Tab = ({ nameTab, active, onClick, color, icon, countOfTab }) => {
   const tabStyle = {
     backgroundColor: active ? color : "",
     // color: active ? color : 'gray-500',

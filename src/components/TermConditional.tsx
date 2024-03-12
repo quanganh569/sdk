@@ -1,4 +1,6 @@
-const TermConditional = (data: any) => {
+import React from "react";
+
+const TermConditional = (data) => {
   const term = data?.data;
 
   return (

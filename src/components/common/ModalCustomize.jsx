@@ -1,15 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { XCircleIcon } from "@heroicons/react/24/solid";
 import React, { Fragment } from "react";
-type ModalProps = {
-  titleModal?: string;
-  className?: string;
-  handleClose?: (event: any) => void;
-  handleOpen?: (event: any) => void;
-  valueModal?: JSX.Element;
-  isShow?: boolean;
-};
-const ModalCustomize: React.FC<ModalProps> = ({
+
+const ModalCustomize = ({
   isShow,
   handleOpen,
   handleClose,

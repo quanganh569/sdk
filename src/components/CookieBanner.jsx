@@ -4,25 +4,12 @@ import axios from "axios";
 import posthog from "posthog-js";
 import { Fragment, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-// import ModalCustomize from "./common/ModalCustomize";
+// import logo from "./../assets/logo";
 import { Dialog, Transition } from "@headlessui/react";
 import { XCircleIcon } from "@heroicons/react/24/solid";
 import React from "react";
 import Tab from "./common/TabSelect";
-interface FormData {
-  email: string;
-  firstName: string;
-  lastName: string;
-  verified: boolean;
-  optout: boolean;
-  country: string;
-  data_source: string;
-  additional_data: null;
-  ip_address: string;
-  consentStatus: string;
-  privacy_policy: boolean;
-  terms_and_conditions: boolean;
-}
+
 
 const CookieBanner = () => {
   const [showBanner, setShowBanner] = useState(true); // new
@@ -41,8 +28,8 @@ const CookieBanner = () => {
   // GARENA APP
   const idApp = "153c499c-582f-456c-82da-4b60d22b9e2e";
 
-  const [dymanicForm, setDynamicForm] = useState([] as any);
-  const [apiPolicyTermData, setApiPolicyTermData] = useState([] as any);
+  const [dymanicForm, setDynamicForm] = useState([] );
+  const [apiPolicyTermData, setApiPolicyTermData] = useState([] );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,7 +52,6 @@ const CookieBanner = () => {
     fetchData();
   }, [idApp]);
 
-  console.log(apiPolicyTermData, "apiPolicyTermData");
   const [activeTab, setActiveTab] = useState(0);
   const tabData = [
     // {
@@ -105,7 +91,7 @@ const CookieBanner = () => {
     },
   ];
 
-  const handleTabClick = (tabNumber: any) => {
+  const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
   };
 
@@ -122,12 +108,12 @@ const CookieBanner = () => {
 
   const [formData, setFormData] = useState({});
 
-  const handleInputChange = (event: any) => {
+  const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const onSubmit = (e: any) => {
+  const onSubmit = (e) => {
     e.preventDefault();
     try {
       const response = axios.put(
@@ -145,7 +131,7 @@ const CookieBanner = () => {
       // setTimeout(() => {
       //   window.location.reload();
       // }, 2000);
-    } catch (error: any) {
+    } catch (error) {
       console.log(error, "error");
       // Assuming 'toast.error' comes from a library like react-toastify
       toast.error(error.response?.data?.message || "Đã xảy ra lỗi"); // Provide a fallback message
@@ -213,7 +199,7 @@ const CookieBanner = () => {
 
           <div className="mb-4 md:mb-0 md:me-4">
             <h3 className="mb-1 text-xl font-bold text-white dark:text-white">
-              Chính sách ssbảo mật
+              Chính sách bảo mật
             </h3>
             <p className="flex items-center text-sm font-normal text-white dark:text-gray-400 text-justify ">
               Chúng tôi tôn trọng quyền riêng tư của bạn và hướng tới trải
@@ -252,7 +238,7 @@ const CookieBanner = () => {
         valueModal={
           <>
             <div className="flex flex-row space-x-3 p-4 justify-items-center justify-content-between  mx-auto  ">
-              {tabData.map((tab: any, index) => (
+              {tabData.map((tab, index) => (
                 <div className="">
                   <Tab
                     // countOfTab={tab.countOfTab}
@@ -275,7 +261,7 @@ const CookieBanner = () => {
                 >
                   <p className="text-center  text-xl font-bold">Consent Form</p>
 
-                  {dymanicForm?.map((item: any) => {
+                  {dymanicForm?.map((item) => {
                     return (
                       <div className="mb-4">
                         <label
@@ -333,15 +319,8 @@ const CookieBanner = () => {
 
 export default CookieBanner;
 
-type ModalProps = {
-  titleModal?: string;
-  className?: string;
-  handleClose?: (event: any) => void;
-  handleOpen?: (event: any) => void;
-  valueModal?: JSX.Element;
-  isShow?: boolean;
-};
-const ModalCustomize: React.FC<ModalProps> = ({
+
+const ModalCustomize = ({
   isShow,
   handleOpen,
   handleClose,
@@ -356,9 +335,7 @@ const ModalCustomize: React.FC<ModalProps> = ({
           id="modal"
           className="fixed inset-0 z-10 overflow-y-auto"
           static
-          onClose={() => {
-            handleClose();
-          }}
+          onClose={()=>{console.log("123")}}
         >
           <Transition.Child
             as={Fragment}

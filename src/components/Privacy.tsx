@@ -1,4 +1,6 @@
-const PrivacyPolicy = (data: any) => {
+import React from "react";
+
+const PrivacyPolicy = (data) => {
   const policy = data.data;
   return (
     <div className="md:max-w-2xl mx-5 md:mx-auto mt-5 md:space-y-5 overflow-y-auto ">
