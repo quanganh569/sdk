@@ -1,11 +1,11 @@
 import posthog from "posthog-js";
-import { useState } from 'react';
+import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import './App.css';
+import "./App.css";
 import CookieBanner from "./components/CookieBanner";
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
@@ -15,7 +15,7 @@ function App() {
         <CookieBanner />
       )}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
